@@ -3,19 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Site Name</title>
+  <title>Attribution Lab — Know Where Your Revenue Comes From</title>
 
-  <!-- Google Tag Manager snippet goes here -->
+  <!-- ====================================================
+       GOOGLE TAG MANAGER — Replace GTM-XXXXXXX with your
+       actual container ID from tagmanager.google.com
+  ===================================================== -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Your page content goes here -->
-  <h1>Hello world, I am here.</h1>
+  <!-- ====================================================
+       GTM NOSCRIPT — Required, keep directly after <body>
+  ===================================================== -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End GTM noscript -->
 
-  <!-- dataLayer script -->
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Attribution<span>Lab</span></a>
+      <ul class="nav-links">
+        <li><a href="#features" onclick="trackNavClick('features')">What's Broken</a></li>
+        <li><a href="#pricing" onclick="trackNavClick('pricing')">Pricing</a></li>
+        <li><a href="#contact" onclick="trackNavClick('contact')">Get Audit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-label">Attribution Intelligence</div>
+    <h1 class="hero-headline">
+      Your marketing data<br>
+      is <span class="accent">lying</span> to you.
+    </h1>
+    <p class="hero-sub">
+      Most companies are spending on campaigns they can't measure.
+      We fix the tracking foundation so every dollar has a signal.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" id="hero-cta" onclick="trackCTAClick('hero', 'get_audit')">
+        Get a Free Attribution Audit
+      </button>
+      <a href="#features" class="btn btn-ghost" onclick="trackCTAClick('hero', 'learn_more')">
+        See What's Broken →
+      </a>
+    </div>
+    <div class="hero-stat-row">
+      <div class="stat"><span class="stat-num">73%</span><span class="stat-label">of mid-market teams can't attribute revenue to channel</span></div>
+      <div class="stat"><span class="stat-num">$0</span><span class="stat-label">wasted on campaigns you can now prove work</span></div>
+      <div class="stat"><span class="stat-num">4wks</span><span class="stat-label">average time to full end-to-end attribution setup</span></div>
+    </div>
+  </section>
+
+
+  <!-- ============ FEATURES / PROBLEMS ============ -->
+  <section class="features" id="features">
+    <div class="section-inner">
+      <div class="section-label">The Common Breaks</div>
+      <h2 class="section-title">Where most companies lose signal</h2>
+      <div class="features-grid">
+
+        <div class="feature-card" data-feature="broken-ga4">
+          <div class="feature-icon">01</div>
+          <h3>GA4 Installed, Nothing Tracking</h3>
+          <p>The script is there but events are misfiring, duplicated, or never reaching GA4. You have data but none of it is trustworthy.</p>
+        </div>
+
+        <div class="feature-card" data-feature="no-gtm">
+          <div class="feature-icon">02</div>
+          <h3>No Tag Management Layer</h3>
+          <p>Tracking code is hardcoded in the site. Every change requires a developer. Events are inconsistent across pages.</p>
+        </div>
+
+        <div class="feature-card" data-feature="dark-traffic">
+          <div class="feature-icon">03</div>
+          <h3>Dark Traffic & Misattribution</h3>
+          <p>UTM parameters are missing or inconsistent. Direct traffic is inflated. Campaign ROI is unmeasurable.</p>
+        </div>
+
+        <div class="feature-card" data-feature="no-conversions">
+          <div class="feature-icon">04</div>
+          <h3>Zero Conversion Tracking</h3>
+          <p>Form submissions, purchases, phone calls — none are connected back to the ad or campaign that drove them.</p>
+        </div>
+
+        <div class="feature-card" data-feature="server-side">
+          <div class="feature-icon">05</div>
+          <h3>Client-Side Only (Ad Blockers Win)</h3>
+          <p>Browser tracking loses 20–40% of conversions to ad blockers and ITP. Server-side tagging is the fix.</p>
+        </div>
+
+        <div class="feature-card" data-feature="no-crm">
+          <div class="feature-icon">06</div>
+          <h3>CRM & Ad Platform Disconnect</h3>
+          <p>Your Salesforce deals have no link to the Google Ads campaign that started them. Offline conversion import is broken or absent.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="section-inner">
+      <div class="section-label">Engagement Options</div>
+      <h2 class="section-title">Pick your starting point</h2>
+      <div class="pricing-grid">
+
+        <div class="pricing-card" id="pricing-audit" onmouseenter="trackPricingHover('audit')" onclick="trackPricingClick('audit')">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">$2,500</div>
+          <div class="pricing-desc">Attribution Audit</div>
+          <ul class="pricing-features">
+            <li>Full GA4 + GTM diagnostic</li>
+            <li>UTM & campaign audit</li>
+            <li>Conversion tracking review</li>
+            <li>Priority fix report</li>
+            <li>90-min findings debrief</li>
+          </ul>
+          <button class="btn btn-outline" onclick="trackCTAClick('pricing', 'audit')">Start with Audit</button>
+        </div>
+
+        <div class="pricing-card pricing-card--featured" id="pricing-build" onmouseenter="trackPricingHover('build')" onclick="trackPricingClick('build')">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Core</div>
+          <div class="pricing-price">$8,500</div>
+          <div class="pricing-desc">Attribution Build</div>
+          <ul class="pricing-features">
+            <li>Everything in Audit</li>
+            <li>Full GTM rebuild / setup</li>
+            <li>GA4 event schema design</li>
+            <li>Conversion tracking (all channels)</li>
+            <li>UTM governance framework</li>
+            <li>Looker Studio dashboard</li>
+          </ul>
+          <button class="btn btn-primary" onclick="trackCTAClick('pricing', 'build')">Get the Full Build</button>
+        </div>
+
+        <div class="pricing-card" id="pricing-retainer" onmouseenter="trackPricingHover('retainer')" onclick="trackPricingClick('retainer')">
+          <div class="pricing-tier">Ongoing</div>
+          <div class="pricing-price">$3,500<span>/mo</span></div>
+          <div class="pricing-desc">Growth Intelligence Retainer</div>
+          <ul class="pricing-features">
+            <li>Everything in Build</li>
+            <li>Monthly data QA</li>
+            <li>New tracking as site evolves</li>
+            <li>Campaign performance reads</li>
+            <li>Slack access for questions</li>
+          </ul>
+          <button class="btn btn-outline" onclick="trackCTAClick('pricing', 'retainer')">Discuss Retainer</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ EMAIL CAPTURE / CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-label">Free Audit</div>
+      <h2 class="section-title">Find out what's broken in 15 minutes</h2>
+      <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check — no pitch, no fluff.</p>
+
+      <div class="form-wrap">
+        <input
+          type="email"
+          id="email-input"
+          placeholder="your@email.com"
+          class="form-input"
+          onfocus="trackFormStart('contact')"
+          oninput="trackFormInteraction('contact', 'email')"
+        />
+        <button
+          class="btn btn-primary"
+          id="form-submit-btn"
+          onclick="handleFormSubmit()"
+        >
+          Send Me the Audit
+        </button>
+      </div>
+      <p class="form-note" id="form-message"></p>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#" class="nav-logo">Attribution<span>Lab</span></a>
+      <p class="footer-copy">© 2025 AttributionLab. Built to learn, built to teach.</p>
+    </div>
+  </footer>
+
+
+  <!-- dataLayer + event tracking -->
   <script src="dataLayer.js"></script>
+
+  <!-- Scroll depth tracking init -->
+  <script>
+    initScrollTracking();
+    initFeatureCardTracking();
+  </script>
 
 </body>
 </html>
