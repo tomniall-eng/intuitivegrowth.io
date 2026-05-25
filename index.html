@@ -30,10 +30,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ============ NAV ============ -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Attribution<span>Lab</span></a>
+      <a href="#" class="nav-logo">Intuitive<span>Growth</span></a>
       <ul class="nav-links">
         <li><a href="#features" onclick="trackNavClick('features')">What's Broken</a></li>
-        <li><a href="#pricing" onclick="trackNavClick('pricing')">Pricing</a></li>
         <li><a href="#contact" onclick="trackNavClick('contact')">Get Audit</a></li>
       </ul>
     </div>
@@ -53,7 +52,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
     <div class="hero-actions">
       <button class="btn btn-primary" id="hero-cta" onclick="trackCTAClick('hero', 'get_audit')">
-        Get a Free Attribution Audit
+        Get a Free Attribution Checklist
       </button>
       <a href="#features" class="btn btn-ghost" onclick="trackCTAClick('hero', 'learn_more')">
         See What's Broken →
@@ -61,7 +60,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero-stat-row">
       <div class="stat"><span class="stat-num">73%</span><span class="stat-label">of mid-market teams can't attribute revenue to channel</span></div>
-      <div class="stat"><span class="stat-num">$0</span><span class="stat-label">wasted on campaigns you can now prove work</span></div>
+      <div class="stat"><span class="stat-num">$500B</span><span class="stat-label">estimated wasted on paid campaigns every year</span></div>
       <div class="stat"><span class="stat-num">4wks</span><span class="stat-label">average time to full end-to-end attribution setup</span></div>
     </div>
   </section>
@@ -114,68 +113,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-
-  <!-- ============ PRICING ============ -->
-  <section class="pricing" id="pricing">
-    <div class="section-inner">
-      <div class="section-label">Engagement Options</div>
-      <h2 class="section-title">Pick your starting point</h2>
-      <div class="pricing-grid">
-
-        <div class="pricing-card" id="pricing-audit" onmouseenter="trackPricingHover('audit')" onclick="trackPricingClick('audit')">
-          <div class="pricing-tier">Starter</div>
-          <div class="pricing-price">$2,500</div>
-          <div class="pricing-desc">Attribution Audit</div>
-          <ul class="pricing-features">
-            <li>Full GA4 + GTM diagnostic</li>
-            <li>UTM & campaign audit</li>
-            <li>Conversion tracking review</li>
-            <li>Priority fix report</li>
-            <li>90-min findings debrief</li>
-          </ul>
-          <button class="btn btn-outline" onclick="trackCTAClick('pricing', 'audit')">Start with Audit</button>
-        </div>
-
-        <div class="pricing-card pricing-card--featured" id="pricing-build" onmouseenter="trackPricingHover('build')" onclick="trackPricingClick('build')">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-tier">Core</div>
-          <div class="pricing-price">$8,500</div>
-          <div class="pricing-desc">Attribution Build</div>
-          <ul class="pricing-features">
-            <li>Everything in Audit</li>
-            <li>Full GTM rebuild / setup</li>
-            <li>GA4 event schema design</li>
-            <li>Conversion tracking (all channels)</li>
-            <li>UTM governance framework</li>
-            <li>Looker Studio dashboard</li>
-          </ul>
-          <button class="btn btn-primary" onclick="trackCTAClick('pricing', 'build')">Get the Full Build</button>
-        </div>
-
-        <div class="pricing-card" id="pricing-retainer" onmouseenter="trackPricingHover('retainer')" onclick="trackPricingClick('retainer')">
-          <div class="pricing-tier">Ongoing</div>
-          <div class="pricing-price">$3,500<span>/mo</span></div>
-          <div class="pricing-desc">Growth Intelligence Retainer</div>
-          <ul class="pricing-features">
-            <li>Everything in Build</li>
-            <li>Monthly data QA</li>
-            <li>New tracking as site evolves</li>
-            <li>Campaign performance reads</li>
-            <li>Slack access for questions</li>
-          </ul>
-          <button class="btn btn-outline" onclick="trackCTAClick('pricing', 'retainer')">Discuss Retainer</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
   <!-- ============ EMAIL CAPTURE / CONTACT ============ -->
   <section class="contact" id="contact">
     <div class="section-inner contact-inner">
-      <div class="section-label">Free Audit</div>
-      <h2 class="section-title">Find out what's broken in 15 minutes</h2>
+      <div class="section-label">Free Attribution Checklist</div>
+      <h2 class="section-title">Find out what's missing in your setup</h2>
       <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check — no pitch, no fluff.</p>
 
       <div class="form-wrap">
@@ -192,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           id="form-submit-btn"
           onclick="handleFormSubmit()"
         >
-          Send Me the Audit
+          Send Me the Checklist
         </button>
       </div>
       <p class="form-note" id="form-message"></p>
