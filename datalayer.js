@@ -224,7 +224,7 @@ function trackFormInteraction(formName, fieldName) {
 // Called by the submit button onclick handler.
 // Validates email, pushes outcome (success / error) to dataLayer.
 // ─────────────────────────────────────────
-function handleFormSubmit() {
+async function handleFormSubmit() {
   const input   = document.getElementById('email-input');
   const message = document.getElementById('form-message');
   const email   = input ? input.value.trim() : '';
@@ -252,16 +252,40 @@ function handleFormSubmit() {
     event:         'form_submit',
     form_name:      'contact',
     form_outcome:   'success',
-    // Do NOT push the actual email address into dataLayer —
-    // this is a PII best practice. Push a hashed version if needed.
   });
   console.log('[dataLayer] form_submit success');
 
-  if (message) {
-    message.textContent = '✓ Got it! Check your inbox shortly.';
-    message.className   = 'form-note success';
+  // ── Kit API call ──
+  const API_KEY = 'yrb_aW85QWw5OLmnrB9idwQ';
+  const FORM_ID = '516e7fa63e';
+
+  try {
+    const res = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ api_key: API_KEY, email: email })
+    });
+
+    if (res.ok) {
+      if (message) {
+        message.textContent = '✓ Got it! Check your inbox shortly.';
+        message.className   = 'form-note success';
+      }
+    } else {
+      if (message) {
+        message.textContent = '⚠ Something went wrong — please try again.';
+        message.className   = 'form-note error';
+      }
+    }
+  } catch (e) {
+    console.error('[Kit] API error', e);
+    if (message) {
+      message.textContent = '⚠ Network error — please try again.';
+      message.className   = 'form-note error';
+    }
   }
+
   if (input) input.value = '';
-  _formStarted         = false;
+  _formStarted          = false;
   _formInteractionFired = false;
 }
