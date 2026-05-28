@@ -256,7 +256,7 @@ async function handleFormSubmit() {
   console.log('[dataLayer] form_submit success');
 
   // ── Kit API call ──
-  const API_KEY = 'kit_36098f1cc668bb37a8068aaf431b2e17';
+  const API_KEY = 'rb_aW85QWw5OLmnrB9idwQ';
   const FORM_ID = '516e7fa63e';
 
   try {
