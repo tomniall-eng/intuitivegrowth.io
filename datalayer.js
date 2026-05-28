@@ -256,8 +256,8 @@ async function handleFormSubmit() {
   console.log('[dataLayer] form_submit success');
 
   // ── Kit API call ──
-  const API_KEY = 'yrb_aW85QWw5OLmnrB9idwQ';
-  const FORM_ID = '9493234';
+  const API_KEY = 'kit_36098f1cc668bb37a8068aaf431b2e17';
+  const FORM_ID = '516e7fa63e';
 
   try {
     const res = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
