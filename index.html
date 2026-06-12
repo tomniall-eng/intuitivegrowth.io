@@ -18,6 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script>
+  (function($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0] = 'EMAIL'; ftypes[0] = 'email';
+    fnames[1] = 'FNAME'; ftypes[1] = 'text';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
 </head>
 <body>
 
@@ -113,34 +124,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ============ EMAIL CAPTURE / CONTACT ============ -->
-  <section class="contact" id="contact">
-    <div class="section-inner contact-inner">
-      <div class="section-label">Free Attribution Checklist</div>
-      <h2 class="section-title">Find out what's missing in your setup</h2>
-      <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check — no pitch, no fluff.</p>
+<!-- ============ EMAIL CAPTURE / CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-inner">
+    <div class="section-label">Free Attribution Checklist</div>
+    <h2 class="section-title">Find out what's missing in your setup</h2>
+    <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check — no pitch, no fluff.</p>
 
-      <div class="form-wrap">
-        <input
-          type="email"
-          id="email-input"
-          placeholder="your@email.com"
-          class="form-input"
-          onfocus="trackFormStart('contact')"
-          oninput="trackFormInteraction('contact', 'email')"
-        />
-        <button
-          class="btn btn-primary"
-          id="form-submit-btn"
-          onclick="handleFormSubmit()"
-        >
-          Send Me the Checklist
-        </button>
-      </div>
-      <p class="form-note" id="form-message"></p>
+    <div id="mc_embed_signup">
+      <form
+        action="https://intuitivegrowth.us10.list-manage.com/subscribe/post?u=184fd7efee9c0c70a7bfabcbe&amp;id=631ac0365e&amp;f_id=00ff1be2f0"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        target="_blank"
+      >
+        <div class="form-wrap form-wrap--stacked">
+          <input
+            type="text"
+            name="FNAME"
+            id="mce-FNAME"
+            placeholder="First name"
+            class="form-input"
+            required
+            onfocus="trackFormStart('contact')"
+            oninput="trackFormInteraction('contact', 'fname')"
+          />
+          <input
+            type="email"
+            name="EMAIL"
+            id="mce-EMAIL"
+            placeholder="your@email.com"
+            class="form-input"
+            required
+            oninput="trackFormInteraction('contact', 'email')"
+          />
+
+          <!-- Mailchimp bot honeypot — do not remove -->
+          <div aria-hidden="true" style="position:absolute; left:-5000px;">
+            <input type="text" name="b_184fd7efee9c0c70a7bfabcbe_631ac0365e" tabindex="-1" value="">
+          </div>
+
+          <button
+            type="submit"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+            class="btn btn-primary"
+            onclick="trackFormSubmit('contact')"
+          >
+            Send Me the Checklist
+          </button>
+        </div>
+
+        <div id="mce-responses">
+          <div id="mce-error-response" style="display:none;"></div>
+          <div id="mce-success-response" style="display:none;"></div>
+        </div>
+      </form>
     </div>
-  </section>
 
+    <p class="form-note" id="form-message"></p>
+  </div>
+</section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">

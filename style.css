@@ -436,6 +436,22 @@ img { display: block; max-width: 100%; }
 .form-note.success { color: var(--accent); }
 .form-note.error   { color: var(--accent-2); }
 
+.form-wrap--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-wrap--stacked .form-input {
+  width: 100%;
+}
+
+.form-wrap--stacked .btn {
+  width: 100%;
+}
+
 
 /* ---- FOOTER ---- */
 .footer {
