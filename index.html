@@ -15,7 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
@@ -40,10 +40,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ============ NAV ============ -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Intuitive<span>Growth</span></a>
+      <a href="#" class="logo logo-on-dark">
+        <svg class="logo-mark" width="28" height="20" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="6" cy="22" r="4" fill="currentColor"/>
+          <circle cx="18" cy="22" r="4" fill="currentColor"/>
+          <path d="M6 22 H18 L28 8 H34" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="34" cy="8" r="5" fill="var(--signal-light)"/>
+        </svg>
+        intuitive growth
+      </a>
       <ul class="nav-links">
-        <li><a href="#features" onclick="trackNavClick('features')">What's Broken</a></li>
-        <li><a href="#contact" onclick="trackNavClick('contact')">Get Audit</a></li>
+        <li><a href="#features" onclick="trackNavClick('features')">What's broken</a></li>
+        <li><a href="#contact" class="btn btn-primary" onclick="trackNavClick('contact')">Get a free audit</a></li>
       </ul>
     </div>
   </nav>
@@ -51,24 +59,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <div class="hero-label">intuitivegrowth.io</div>
-    <h1 class="hero-headline">
-      Your marketing data<br>
-      is <span class="accent">lying</span> to you.
-    </h1>
-    <p class="hero-sub">
-      Most companies are spending on campaigns they can't measure.
-      We fix the tracking foundation so every dollar has a signal.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary" id="hero-cta" onclick="trackCTAClick('hero', 'get_audit')">
-  Get a Free Attribution Checklist
-</a>
-      <a href="#features" class="btn btn-ghost" onclick="trackCTAClick('hero', 'learn_more')">
-        See What's Broken →
-      </a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-pill">Fix the foundation. Unlock the growth.</div>
+        <h1 class="hero-headline">
+          Your marketing data is <span class="accent">lying to you.</span>
+        </h1>
+        <p class="hero-sub">
+          Most companies are spending on campaigns they can't measure.
+          We fix the tracking foundation so every dollar has a signal.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary" id="hero-cta" onclick="trackCTAClick('hero', 'get_audit')">
+            Get the attribution checklist
+          </a>
+          <a href="#features" class="btn btn-ghost" onclick="trackCTAClick('hero', 'learn_more')">
+            See what's broken →
+          </a>
+        </div>
+      </div>
+
+      <div class="chart-card" aria-hidden="true">
+        <div class="chart-header">
+          <span class="chart-title">Revenue by channel</span>
+          <span><span class="chart-live">live</span><span class="chart-badge">+38%</span></span>
+        </div>
+        <div class="chart-bars">
+          <div class="chart-bar" style="height: 30%;"></div>
+          <div class="chart-bar" style="height: 42%;"></div>
+          <div class="chart-bar" style="height: 24%;"></div>
+          <div class="chart-bar" style="height: 58%;"></div>
+          <div class="chart-bar chart-bar--lead" style="height: 100%;"></div>
+        </div>
+        <div class="chart-labels">
+          <span>Direct</span>
+          <span>Email</span>
+          <span>Social</span>
+          <span>Search</span>
+          <span class="lead">Paid</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stat-row">
+
+    <div class="stat-row">
       <div class="stat"><span class="stat-num">73%</span><span class="stat-label">of mid-market teams can't attribute revenue to channel</span></div>
       <div class="stat"><span class="stat-num">$500B</span><span class="stat-label">estimated spend wasted on paid campaigns every year</span></div>
       <div class="stat"><span class="stat-num">4wks</span><span class="stat-label">average time to full end-to-end attribution setup</span></div>
@@ -79,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ============ FEATURES / PROBLEMS ============ -->
   <section class="features" id="features">
     <div class="section-inner">
-      <div class="section-label">The Common Breaks</div>
+      <div class="eyebrow">The common breaks</div>
       <h2 class="section-title">Where most companies lose signal</h2>
       <div class="features-grid">
 
@@ -126,12 +159,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ EMAIL CAPTURE / CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="section-inner contact-inner">
-    <div class="section-label">Free Attribution Checklist</div>
+    <div class="eyebrow">Free attribution checklist</div>
     <h2 class="section-title">Find out what's missing in your setup</h2>
-    <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check — no pitch, no fluff.</p>
+    <p class="contact-sub">Enter your email and I'll send you a quick-start attribution health check.</p>
 
     <form
-      class="form-wrap form-wrap--stacked"
+      class="form-wrap--stacked"
       action="https://assets.mailerlite.com/jsonp/2444351/forms/190414202320455359/subscribe"
       method="post"
       target="_blank"
@@ -168,7 +201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         class="btn btn-primary"
         onclick="trackFormSubmit('contact')"
       >
-        Send Me the Checklist
+        Send me the checklist
       </button>
     </form>
 
@@ -179,14 +212,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="footer-inner">
-      <a href="#" class="nav-logo">Intuitive<span>Growth</span></a>
+      <a href="#" class="logo logo-on-dark">
+        <svg class="logo-mark" width="28" height="20" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="6" cy="22" r="4" fill="currentColor"/>
+          <circle cx="18" cy="22" r="4" fill="currentColor"/>
+          <path d="M6 22 H18 L28 8 H34" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="34" cy="8" r="5" fill="var(--signal-light)"/>
+        </svg>
+        intuitive growth
+      </a>
       <p class="footer-copy">© 2026 IntuitiveGrowth.</p>
     </div>
   </footer>
 
 
   <!-- dataLayer + event tracking -->
-  <script src="datalayer.js"></script>
+  <script src="dataLayer.js"></script>
 
   <!-- Scroll depth tracking init -->
   <script>

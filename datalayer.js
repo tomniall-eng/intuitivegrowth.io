@@ -222,70 +222,12 @@ function trackFormInteraction(formName, fieldName) {
 // ─────────────────────────────────────────
 // 10. FORM SUBMIT
 // Called by the submit button onclick handler.
-// Validates email, pushes outcome (success / error) to dataLayer.
+// Validates email, pushes outcome (success or error) to dataLayer.
 // ─────────────────────────────────────────
-async function handleFormSubmit() {
-  const input   = document.getElementById('email-input');
-  const message = document.getElementById('form-message');
-  const email   = input ? input.value.trim() : '';
-  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  if (!isValid) {
-    // ── Error path ──
-    window.dataLayer.push({
-      event:          'form_submit',
-      form_name:       'contact',
-      form_outcome:    'error',
-      error_reason:    'invalid_email',
-    });
-    console.log('[dataLayer] form_submit error — invalid email');
-
-    if (message) {
-      message.textContent = '⚠ Please enter a valid email address.';
-      message.className   = 'form-note error';
-    }
-    return;
-  }
-
-  // ── Success path ──
+function trackFormSubmit(formName) {
   window.dataLayer.push({
-    event:         'form_submit',
-    form_name:      'contact',
-    form_outcome:   'success',
+    event:        'form_submit',
+    form_name:     formName,
   });
-  console.log('[dataLayer] form_submit success');
-
-  // ── Kit API call ──
-  const API_KEY = 'rb_aW85QWw5OLmnrB9idwQ';
-  const FORM_ID = '9493234';
-
-  try {
-    const res = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ api_key: API_KEY, email: email })
-    });
-
-    if (res.ok) {
-      if (message) {
-        message.textContent = '✓ Got it! Check your inbox shortly.';
-        message.className   = 'form-note success';
-      }
-    } else {
-      if (message) {
-        message.textContent = '⚠ Something went wrong — please try again.';
-        message.className   = 'form-note error';
-      }
-    }
-  } catch (e) {
-    console.error('[Kit] API error', e);
-    if (message) {
-      message.textContent = '⚠ Network error — please try again.';
-      message.className   = 'form-note error';
-    }
-  }
-
-  if (input) input.value = '';
-  _formStarted          = false;
-  _formInteractionFired = false;
+  console.log('[dataLayer] form_submit', formName);
 }
